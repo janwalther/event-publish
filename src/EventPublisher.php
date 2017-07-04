@@ -1,5 +1,5 @@
 <?php
-namespace janwalther\event_publisher;
+namespace janwalther\event_publish;
 
 use PhpAmqpLib\Connection\AbstractConnection;
 use PhpAmqpLib\Message\AMQPMessage;

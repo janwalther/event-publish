@@ -9,7 +9,7 @@
   },
   "autoload": {
     "psr-4": {
-      "janwalther\\event_publisher\\": "src/"
+      "janwalther\\event_publish\\": "src/"
     }
   }
 }

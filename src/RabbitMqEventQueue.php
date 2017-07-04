@@ -1,5 +1,5 @@
 <?php
-namespace janwalther\event_publisher;
+namespace janwalther\event_publish;
 
 use Broadway\Domain\DomainMessage;
 use Broadway\EventHandling\EventListener;
