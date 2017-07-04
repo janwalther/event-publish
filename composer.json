@@ -1,0 +1,15 @@
+{
+  "name": "janwalther/event-publish",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php-amqplib/php-amqplib": "*",
+    "matthiasnoback/broadway-serialization": "*",
+    "webmozart/assert": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "janwalther\\event_publisher\\": "src/"
+    }
+  }
+}
