@@ -3,8 +3,6 @@ namespace janwalther\event_publisher;
 
 use Broadway\Domain\DomainMessage;
 use Broadway\EventHandling\EventListener;
-use PhpAmqpLib\Connection\AbstractConnection;
-use PhpAmqpLib\Message\AMQPMessage;
 use Webmozart\Assert\Assert;
 
 class RabbitMqEventQueue implements EventListener
