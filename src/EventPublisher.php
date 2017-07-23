@@ -20,11 +20,11 @@ class EventPublisher
         $this->connection->close();
     }
 
-    public function publish(string $queue, $payload) {
+    public function publish(QueueableEvent $event) {
         $channel = $this->connection->channel();
 
         $channel->queue_declare(
-            $queue,
+            get_class($event),
             #queue - Queue names may be up to 255 bytes of UTF-8 characters
             false,
             #passive - can use this to check whether an exchange exists without modifying the server state
@@ -36,14 +36,14 @@ class EventPublisher
         );
 
         $msg = new AMQPMessage(
-            $payload,
+            serialize($event),
             ['delivery_mode' => 2] # make message persistent, so it is not lost if server crashes or quits
         );
 
         $channel->basic_publish(
             $msg,               #message
             '',                 #exchange
-            get_class($queue)     #routing key (queue)
+            get_class($event)     #routing key (queue)
         );
     }
 }

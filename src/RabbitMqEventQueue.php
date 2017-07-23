@@ -22,6 +22,6 @@ class RabbitMqEventQueue implements EventListener
 
         Assert::implementsInterface($event, QueueableEvent::class);
 
-        $this->eventPublisher->publish(get_class($event), $event->serialize());
+        $this->eventPublisher->publish($event);
     }
 }
